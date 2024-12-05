@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import dagger.multibindings.IntoMap
+import ru.profsoft.testapp.dirol.DirolScreenModel
 import ru.profsoft.testapp.orbit.OrbitScreenModel
 
 @Module
@@ -17,4 +18,9 @@ abstract class ScreenModelModule {
     @IntoMap
     @ScreenModelKey(OrbitScreenModel::class)
     abstract fun bindOrbitScreenModel(orbitScreenModel: OrbitScreenModel): ScreenModel
+
+    @Binds
+    @IntoMap
+    @ScreenModelKey(DirolScreenModel::class)
+    abstract fun bindDirolScreenModel(dirolScreenModel: DirolScreenModel): ScreenModel
 }
